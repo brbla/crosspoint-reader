@@ -27,6 +27,7 @@
 #include "activities/util/FullScreenMessageActivity.h"
 #include "components/UITheme.h"
 #include "fontIds.h"
+#include "i18n/TranslationManager.h"
 #include "util/ButtonNavigator.h"
 
 HalDisplay display;
@@ -304,6 +305,7 @@ void setup() {
 
   SETTINGS.loadFromFile();
   KOREADER_STORE.loadFromFile();
+  TranslationManager::getInstance().init(SETTINGS.languageCode);
   UITheme::getInstance().reload();
   ButtonNavigator::setMappedInputManager(mappedInputManager);
 
