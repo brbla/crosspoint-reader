@@ -718,7 +718,8 @@ void WifiSelectionActivity::renderSavePrompt() const {
 
   // Draw "No" button
   if (savePromptSelection == 1) {
-    renderer.drawText(UI_10_FONT_ID, startX + buttonWidth + buttonSpacing, buttonY, (std::string("[") + T("No") + "]").c_str());
+    renderer.drawText(UI_10_FONT_ID, startX + buttonWidth + buttonSpacing, buttonY,
+                      (std::string("[") + T("No") + "]").c_str());
   } else {
     renderer.drawText(UI_10_FONT_ID, startX + buttonWidth + buttonSpacing + 4, buttonY, T("No"));
   }
@@ -772,7 +773,8 @@ void WifiSelectionActivity::renderForgetPrompt() const {
 
   // Draw "Forget network" button
   if (forgetPromptSelection == 1) {
-    renderer.drawText(UI_10_FONT_ID, startX + buttonWidth + buttonSpacing, buttonY, (std::string("[") + T("Forget network") + "]").c_str());
+    renderer.drawText(UI_10_FONT_ID, startX + buttonWidth + buttonSpacing, buttonY,
+                      (std::string("[") + T("Forget network") + "]").c_str());
   } else {
     renderer.drawText(UI_10_FONT_ID, startX + buttonWidth + buttonSpacing + 4, buttonY, T("Forget network"));
   }
