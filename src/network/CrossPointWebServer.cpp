@@ -1155,6 +1155,8 @@ void CrossPointWebServer::handleDelete() const {
         return;
       }
       dir.close();
+    } else if (dir) {
+      dir.close();
     }
     success = Storage.rmdir(itemPath.c_str());
   } else {
