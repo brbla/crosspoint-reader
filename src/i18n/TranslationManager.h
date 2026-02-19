@@ -50,7 +50,7 @@ class TranslationManager {
   const std::vector<LangInfo>& getAvailableLanguages();
 
   /// Build a vector of display names suitable for SettingInfo::DynamicEnum.
-  std::vector<std::string> getAvailableLanguageNames();
+  std::vector<const char*> getAvailableLanguageNames();
 
   /// Get the index of the current language in getAvailableLanguages().
   uint8_t getCurrentLanguageIndex();

@@ -284,10 +284,10 @@ void SettingsActivity::render() const {
         } else if (settings[i].type == SettingType::ENUM && settings[i].valueGetter) {
           // DynamicEnum: use getter for current value
           const uint8_t value = settings[i].valueGetter();
-          valueText = T(settings[i].enumValues[value].c_str());
+          valueText = T(settings[i].enumValues[value]);
         } else if (settings[i].type == SettingType::ENUM && settings[i].valuePtr != nullptr) {
           const uint8_t value = SETTINGS.*(settings[i].valuePtr);
-          valueText = T(settings[i].enumValues[value].c_str());
+          valueText = T(settings[i].enumValues[value]);
         } else if (settings[i].type == SettingType::VALUE && settings[i].valuePtr != nullptr) {
           valueText = std::to_string(SETTINGS.*(settings[i].valuePtr));
         }

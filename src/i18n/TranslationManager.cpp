@@ -210,12 +210,13 @@ const std::vector<TranslationManager::LangInfo>& TranslationManager::getAvailabl
   return availableLanguages;
 }
 
-std::vector<std::string> TranslationManager::getAvailableLanguageNames() {
+std::vector<const char*> TranslationManager::getAvailableLanguageNames() {
   const auto& langs = getAvailableLanguages();
-  std::vector<std::string> names;
+  std::vector<const char*> names;
   names.reserve(langs.size());
-  std::transform(langs.begin(), langs.end(), std::back_inserter(names),
-                 [](const LangInfo& lang) { return std::string(lang.name); });
+  for (const auto& lang : langs) {
+    names.push_back(lang.name);
+  }
   return names;
 }
 

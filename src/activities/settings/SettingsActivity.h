@@ -28,7 +28,7 @@ struct SettingInfo {
   const char* name;
   SettingType type;
   uint8_t CrossPointSettings::* valuePtr = nullptr;
-  std::vector<std::string> enumValues;
+  std::vector<const char*> enumValues;
   SettingAction action = SettingAction::None;
 
   struct ValueRange {
@@ -62,7 +62,7 @@ struct SettingInfo {
     return s;
   }
 
-  static SettingInfo Enum(const char* name, uint8_t CrossPointSettings::* ptr, std::vector<std::string> values,
+  static SettingInfo Enum(const char* name, uint8_t CrossPointSettings::* ptr, std::vector<const char*> values,
                           const char* key = nullptr, const char* category = nullptr) {
     SettingInfo s;
     s.name = name;
@@ -106,7 +106,7 @@ struct SettingInfo {
     return s;
   }
 
-  static SettingInfo DynamicEnum(const char* name, std::vector<std::string> values, std::function<uint8_t()> getter,
+  static SettingInfo DynamicEnum(const char* name, std::vector<const char*> values, std::function<uint8_t()> getter,
                                  std::function<void(uint8_t)> setter, const char* key = nullptr,
                                  const char* category = nullptr) {
     SettingInfo s;

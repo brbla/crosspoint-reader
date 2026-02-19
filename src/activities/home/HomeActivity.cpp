@@ -281,10 +281,7 @@ void HomeActivity::render() {
 
   renderer.displayBuffer();
 
-  if (!firstRenderDone) {
-    firstRenderDone = true;
-    updateRequired = true;
-  } else if (!recentsLoaded && !recentsLoading) {
+  if (!recentsLoaded && !recentsLoading) {
     recentsLoading = true;
     loadRecentCovers(metrics.homeCoverHeight);
   }
